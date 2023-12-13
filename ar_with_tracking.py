@@ -43,7 +43,7 @@ if __name__ == '__main__':
 
 	sigs = [marker_sig1, marker_sig2, marker_sig3, marker_sig4]
 	rval, frame = vc.read()
-	assert rval, "couldn't access the webcam"
+	assert rval, "couldn't access the video stream"
 	h2, w2,  _ = frame.shape
 	h_canvas = max(h, h2)
 	w_canvas = w + w2
@@ -89,7 +89,7 @@ if __name__ == '__main__':
 			augmented = np.flip(augment(frame, obj, transformation, marker), axis = 1)
 			canvas[:h2 , w: , :] = augmented
 
-		cv2.imshow("webcam", canvas)
+		cv2.imshow("video stream", canvas)
 
 		ch = 0xFF & cv2.waitKey(1)
 		if ch == 27: # Escape key to exit
