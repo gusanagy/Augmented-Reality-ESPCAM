@@ -9,11 +9,14 @@ To use the ESPCAM code, use the scripts in the esp_32_camera_mjpeg folder. Load 
 It is necessary to change the **password** and network in the Arduino script to generate the data port through which the stream will pass. After changing the password and **username** in the fields specified in the script, the serial monitor will display an **IP address** that will be used to capture the image of an ARUCO, found in the DATA folder and will display the 3d model of a fox using its coordinates.
 For augmented reality scripts, see the steps below. It is important to change the IP address for the generated adress in the arduino serial plotter in the main augmented reality scripts stream.py or ar_with_tracking.py.
 
+The video stream has based in this repo:
+https://github.com/ashus3868/ESP32-CAM-LIVE-STREAMING/tree/main
+
 After this steps you can follow the steps bellow.
 
 ## Augumented Reality
 
-"ar.py" is a python program that uses OpenCV to render .obj files on Aruco markers. For an in-depth explanation, check out my [blog tutorial](https://medium.com/swlh/augmented-reality-diy-3fc138274561).
+"ar.py" is a python program that uses OpenCV to render .obj files on Aruco markers. For an in-depth explanation, check out this [blog tutorial](https://medium.com/swlh/augmented-reality-diy-3fc138274561).
 
 <!-- ![Demo](https://user-images.githubusercontent.com/31953115/121981314-0b712c00-cdab-11eb-98d4-decf737824ea.gif) -->
 
