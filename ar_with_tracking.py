@@ -1,4 +1,4 @@
-# v1 - this version uses sparse optical tracking for a more responsive program
+#source# v1 - this version uses sparse optical tracking for a more responsive program
 
 import cv2
 import numpy as np
@@ -23,13 +23,16 @@ if __name__ == '__main__':
 	#accounts for lateral inversion caused by the webcam
 	marker_colored = cv2.flip(marker_colored, 1)
 
-	marker_colored =  cv2.resize(marker_colored, (480,480), interpolation = cv2.INTER_CUBIC )
+	marker_colored =  cv2.resize(marker_colored, (280,280), interpolation = cv2.INTER_CUBIC )
 	marker = cv2.cvtColor(marker_colored, cv2.COLOR_BGR2GRAY)
 
-	print("trying to access the webcam")
-	cv2.namedWindow("webcam")
-	vc = cv2.VideoCapture(0)
-	assert vc.isOpened(), "couldn't access the webcam"
+	print("trying to access the video stream")
+	cv2.namedWindow("video stream")
+	# vc = cv2.VideoCapture(0)
+	# assert vc.isOpened(), "couldn't access the webcam"
+	print("Starting video stream")
+	vc = cv2.VideoCapture('http://192.168.1.101/mjpeg/1')  # Use the video stream URL
+	assert vc.isOpened(), "couldn't access the video stream"
 	
 	h,w = marker.shape
 	#considering all 4 rotations
